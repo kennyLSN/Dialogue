@@ -1,9 +1,9 @@
 import tensorflow as tf
 import numpy as np
-import cPickle as pickle
+import pickle as pickle
 
-import utils.layers as layers
-import utils.operations as op
+import DAM.utils.layers as layers
+import DAM.utils.operations as op
 
 class Net(object):
     '''Add positional encoding(initializer lambda is 0),
@@ -171,7 +171,7 @@ class Net(object):
 
                 for grad, var in self.grads_and_vars:
                     if grad is None:
-                        print var
+                        print (var)
 
                 self.capped_gvs = [(tf.clip_by_value(grad, -1, 1), var) for grad, var in self.grads_and_vars]
                 self.g_updates = Optimizer.apply_gradients(

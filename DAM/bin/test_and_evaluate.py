@@ -2,7 +2,7 @@ import sys
 import os
 import time
 
-import cPickle as pickle
+import pickle as pickle
 import tensorflow as tf
 import numpy as np
 
